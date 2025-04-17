@@ -1,0 +1,45 @@
+{
+  "name": "my-youtube",
+  "version": "1.0.0",
+  "description": "It's a youtube clone made with React",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest",
+    "watch-text": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharatsinghani4/my-youtube.git"
+  },
+  "keywords": [
+    "React",
+    "Youtube",
+    "Clone",
+    "Jest",
+    "RTL",
+    "JS",
+    "Tailwind",
+    "CSS",
+    "Namaste",
+    "react",
+    "Akshay",
+    "Saini"
+  ],
+  "author": "Bharat singhani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharatsinghani4/my-youtube/issues"
+  },
+  "homepage": "https://github.com/bharatsinghani4/my-youtube#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
