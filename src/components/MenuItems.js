@@ -4,7 +4,6 @@ import { Link } from "react-router";
 
 const MenuItems = ({ menu }) => {
   const { heading, items } = menu;
-  console.log({ heading, items });
 
   return (
     <div className="p-3 pb-0">
