@@ -1,6 +1,8 @@
 import React from "react";
-import Search from "./Search";
 import { useDispatch } from "react-redux";
+
+import Search from "./Search";
+
 import { toggleSidebar } from "../../store/appSlice";
 
 const Header = () => {

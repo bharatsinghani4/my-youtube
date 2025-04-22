@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 import VideoCard from "./VideoCard";
 import { YOUTUBE_VIDEO_API_URL } from "../../utils/constants";
-import { Link } from "react-router";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);

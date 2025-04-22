@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { closeSidebar } from "../../store/appSlice";
 import { useSearchParams } from "react-router";
+
+import Comments from "./Comments";
+import { closeSidebar } from "../../store/appSlice";
 
 const WatchPage = () => {
   const dispatch = useDispatch();
@@ -29,6 +31,7 @@ const WatchPage = () => {
               allowFullScreen
             ></iframe>
           </div>
+          <Comments />
         </div>
         <div className="w-[402px] min-w-[300px] flex-[1_1_auto]"></div>
       </div>

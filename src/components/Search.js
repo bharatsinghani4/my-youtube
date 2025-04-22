@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { YOUTUBE_SEARCH_SUGGESTIONS_API_URL } from "../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
+
+import { YOUTUBE_SEARCH_SUGGESTIONS_API_URL } from "../../utils/constants";
 import { storCachedReesults } from "../../store/searchSlice";
 
 const Search = () => {
