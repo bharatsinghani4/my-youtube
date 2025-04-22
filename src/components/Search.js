@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_SUGGESTIONS_API_URL } from "../../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { storCachedReesults } from "../../store/searchSlice";
 
 const Search = () => {
+  const dispatch = useDispatch();
   const [searchText, setSearchText] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [searchSuggestions, setSearchSuggestions] = useState([]);
+  const searchCache = useSelector((store) => store.search);
 
   useEffect(() => {
-    const timer = setTimeout(() => fetchSearchSuggestions(), 200);
+    const timer = setTimeout(() => {
+      if (searchCache[searchText]) {
+        setSearchSuggestions(searchCache[searchText]);
+      } else {
+        fetchSearchSuggestions();
+      }
+    }, 200);
 
     return () => {
       clearTimeout(timer);
@@ -21,6 +31,11 @@ const Search = () => {
     const data = await response.json();
 
     setSearchSuggestions(data[1]);
+    dispatch(
+      storCachedReesults({
+        [searchText]: data[1],
+      })
+    );
   };
 
   const handleSearchInputFocus = () => {
