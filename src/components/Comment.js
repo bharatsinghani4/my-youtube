@@ -2,7 +2,7 @@ const Comment = ({ data }) => {
   const { name, text } = data;
 
   return (
-    <div className="flex p-2 rounded-lg bg-black/5 ">
+    <div className="flex p-2 rounded-lg bg-black/5">
       <div className="h-8 w-8 mr-3.5 bg-gray-200 rounded-full overflow-hidden p-1 cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"

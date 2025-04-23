@@ -21,9 +21,7 @@ const ChatMessage = ({ name, message }) => {
         </svg>
       </div>
       <p className="leading-none text-sm">
-        <span className="text-green-700 font-semibold mr-2 mb-1 block">
-          {name}
-        </span>
+        <span className="text-green-700 font-semibold mb-1 block">{name}</span>
         <span className="text-[#0f0f0f]">{message}</span>
       </p>
     </div>

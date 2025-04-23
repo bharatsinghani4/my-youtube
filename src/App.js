@@ -7,6 +7,7 @@ import store from "../store/appStore";
 import Body from "./components/Body";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import UseMemoExample from "./components/UseMemoExample";
 
 const App = () => {
   const appRouter = createBrowserRouter([
@@ -19,8 +20,12 @@ const App = () => {
           element: <MainContainer />,
         },
         {
-          path: "/watch",
+          path: "watch",
           element: <WatchPage />,
+        },
+        {
+          path: "use-memo-example",
+          element: <UseMemoExample />,
         },
       ],
     },
