@@ -6,6 +6,8 @@ export const YOUTUBE_VIDEO_API_URL =
 export const YOUTUBE_SEARCH_SUGGESTIONS_API_URL =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
+export const LIVE_CHAT_MESSAGES_MAX_COUNT = 200;
+
 export const MENU_ITEMS = [
   {
     heading: "",

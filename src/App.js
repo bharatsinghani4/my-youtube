@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import store from "../store/appStore";
 
 import Body from "./components/Body";
-import Header from "./components/Header";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 
@@ -29,7 +28,6 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Header />
       <RouterProvider router={appRouter} />
     </Provider>
   );
