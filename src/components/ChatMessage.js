@@ -2,8 +2,8 @@ import React from "react";
 
 const ChatMessage = ({ name, message }) => {
   return (
-    <div className="flex items-start gap-2 p-2 bg-slate-200 rounded-xl">
-      <div className="h-6 w-6 bg-gray-200 rounded-full overflow-hidden cursor-pointer flex-shrink-0">
+    <div className="flex items-start gap-1.5 sm:gap-2 p-1.5 sm:p-2 bg-slate-200 rounded-xl">
+      <div className="h-5 w-5 sm:h-6 sm:w-6 bg-gray-200 rounded-full overflow-hidden cursor-pointer flex-shrink-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -12,6 +12,7 @@ const ChatMessage = ({ name, message }) => {
           width="24"
           focusable="false"
           aria-hidden="true"
+          className="h-full w-full"
         >
           <path
             clipRule="evenodd"
@@ -20,12 +21,17 @@ const ChatMessage = ({ name, message }) => {
           ></path>
         </svg>
       </div>
-      <p className="leading-none text-sm">
-        <span className="text-green-700 font-semibold mb-1 block">{name}</span>
-        <span className="text-[#0f0f0f]">{message}</span>
-      </p>
+      <div className="flex-1 min-w-0">
+        <p className="leading-none text-xs sm:text-sm">
+          <span className="text-green-700 font-semibold mb-1 block truncate">
+            {name}
+          </span>
+          <span className="text-[#0f0f0f] break-words">{message}</span>
+        </p>
+      </div>
     </div>
   );
 };
 
 export default ChatMessage;
+

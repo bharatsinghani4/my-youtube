@@ -6,7 +6,7 @@ const Chip = ({ label, selected = false }) => {
   return (
     <button
       type="text"
-      className={`${bgColor} h-8 px-3 rounded-lg cursor-pointer text-sm leading-5`}
+      className={`${bgColor} h-8 px-3 rounded-lg cursor-pointer text-sm leading-5 whitespace-nowrap flex-shrink-0`}
     >
       {label}
     </button>
@@ -14,3 +14,4 @@ const Chip = ({ label, selected = false }) => {
 };
 
 export default Chip;
+

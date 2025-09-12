@@ -14,3 +14,28 @@
 html {
   font-family: "Roboto", "Arial", sans-serif;
 }
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better text selection */
+  ::selection {
+    background-color: #3b82f6;
+    color: white;
+  }
+}

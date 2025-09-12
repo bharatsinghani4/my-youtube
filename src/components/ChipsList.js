@@ -5,11 +5,11 @@ import Chip from "./Chip";
 
 const ChipsList = () => {
   const isSidebarOpen = useSelector((store) => store?.app.isSidebarOpen);
-  const left = isSidebarOpen ? "left-60 top-14" : "left-14 top-14";
+  const left = "left-0 sm:left-14 top-14";
 
   return (
     <div
-      className={`fixed top-14 ${left} pl-6 py-3 flex gap-3 items-center w-full bg-white`}
+      className={`fixed top-14 ${left} pl-3 sm:pl-6 py-3 flex gap-2 sm:gap-3 items-center w-full bg-white overflow-x-auto no-scrollbar transition-all duration-300 ease-in-out`}
     >
       <Chip
         label={"All"}

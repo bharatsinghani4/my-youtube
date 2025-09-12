@@ -2,8 +2,8 @@ const Comment = ({ data }) => {
   const { name, text } = data;
 
   return (
-    <div className="flex p-2 rounded-lg bg-black/5">
-      <div className="h-8 w-8 mr-3.5 bg-gray-200 rounded-full overflow-hidden p-1 cursor-pointer">
+    <div className="flex p-2 sm:p-3 rounded-lg bg-black/5">
+      <div className="h-7 w-7 sm:h-8 sm:w-8 mr-2 sm:mr-3.5 bg-gray-200 rounded-full overflow-hidden p-1 cursor-pointer flex-shrink-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -12,6 +12,7 @@ const Comment = ({ data }) => {
           width="24"
           focusable="false"
           aria-hidden="true"
+          className="h-full w-full"
         >
           <path
             clipRule="evenodd"
@@ -20,12 +21,13 @@ const Comment = ({ data }) => {
           ></path>
         </svg>
       </div>
-      <div>
-        <p className="text-sm font-bold">{name}</p>
-        <p>{text}</p>
+      <div className="flex-1 min-w-0">
+        <p className="text-xs sm:text-sm font-bold">{name}</p>
+        <p className="text-sm sm:text-base break-words">{text}</p>
       </div>
     </div>
   );
 };
 
 export default Comment;
+

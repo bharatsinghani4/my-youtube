@@ -350,9 +350,9 @@ const commentsData = [
 
 const Comments = () => {
   return (
-    <div className="mt-6">
-      <h2 className="text-2xl font-bold">Comments</h2>
-      <div className="flex flex-col py-6 gap-4">
+    <div className="mt-4 sm:mt-6">
+      <h2 className="text-xl sm:text-2xl font-bold">Comments</h2>
+      <div className="flex flex-col py-4 sm:py-6 gap-3 sm:gap-4">
         <CommentsList comments={commentsData} />
       </div>
     </div>
@@ -360,3 +360,5 @@ const Comments = () => {
 };
 
 export default Comments;
+
+

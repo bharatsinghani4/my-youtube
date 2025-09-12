@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import { useDispatch } from "react-redux";
 
 import Search from "./Search";
+import MobileSearch from "./MobileSearch";
 
 import { toggleSidebar } from "../../store/appSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   const handleToggleSidebar = () => {
     dispatch(toggleSidebar());
   };
 
+  const handleMobileSearchToggle = () => {
+    setShowMobileSearch(!showMobileSearch);
+  };
+
   return (
-    <div className="fixed w-full flex items-center justify-between px-4 left-0 top-0 z-10 bg-white">
+    <div className="fixed w-full flex items-center justify-between px-2 sm:px-4 left-0 top-0 z-60 bg-white h-14">
       <div className="flex items-center">
         <button
           type="button"
@@ -34,7 +40,7 @@ const Header = () => {
         </button>
         <Link
           to="/"
-          className="p-4.5"
+          className="p-2 sm:p-4.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +50,7 @@ const Header = () => {
             viewBox="0 0 93 20"
             focusable="false"
             aria-hidden="true"
+            className="w-20 sm:w-24"
           >
             <g>
               <path
@@ -67,13 +74,32 @@ const Header = () => {
           </svg>
         </Link>
       </div>
-      <Search />
-      <div>
-        <div className="h-8 w-8 mr-3.5 bg-gray-200 rounded-full overflow-hidden p-1 cursor-pointer">
-          {/* <img
-            src="https://icons.veryicon.com/png/128/miscellaneous/user-avatar/user-avatar-male-6.png"
-            alt="User Avatar Icon"
-          /> */}
+      <div className="hidden sm:block">
+        <Search />
+      </div>
+      <div className="flex items-center">
+        <button
+          onClick={handleMobileSearchToggle}
+          className="sm:hidden mr-2 p-2 hover:bg-[#f2f2f2] rounded-full transition-colors duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            focusable="false"
+            aria-hidden="true"
+            className="text-[#606060]"
+          >
+            <path
+              clipRule="evenodd"
+              d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z"
+              fillRule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div className="h-8 w-8 mr-1 sm:mr-3.5 bg-gray-200 rounded-full overflow-hidden p-1 cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -91,8 +117,13 @@ const Header = () => {
           </svg>
         </div>
       </div>
+      <MobileSearch
+        isOpen={showMobileSearch}
+        onClose={() => setShowMobileSearch(false)}
+      />
     </div>
   );
 };
 
 export default Header;
+

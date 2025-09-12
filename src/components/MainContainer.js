@@ -6,10 +6,12 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   const isSidebarOpen = useSelector((store) => store?.app.isSidebarOpen);
-  const marginLeft = isSidebarOpen ? "ml-60" : "ml-18";
+  const marginLeft = "ml-0 sm:ml-18";
 
   return (
-    <div className={`mt-14 ${marginLeft} relative bg-white`}>
+    <div
+      className={`mt-14 ${marginLeft} relative bg-white transition-all duration-300 ease-in-out`}
+    >
       <ChipsList />
       <VideoContainer />
     </div>
@@ -17,3 +19,4 @@ const MainContainer = () => {
 };
 
 export default MainContainer;
+

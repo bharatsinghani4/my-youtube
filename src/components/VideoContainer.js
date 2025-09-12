@@ -19,17 +19,21 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="mt-28 pl-6 pt-6 flex flex-wrap gap-2">
-      {videos.map((video) => (
-        <Link
-          key={video.id}
-          to={`/watch?v=${video.id}`}
-        >
-          <VideoCard info={video} />
-        </Link>
-      ))}
+    <div className="mt-28 pl-3 sm:pl-6 pt-6 pr-3 sm:pr-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
+        {videos.map((video) => (
+          <Link
+            key={video.id}
+            to={`/watch?v=${video.id}`}
+            className="block"
+          >
+            <VideoCard info={video} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default VideoContainer;
+
