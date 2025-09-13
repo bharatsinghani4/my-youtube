@@ -54,7 +54,7 @@ const LiveChat = () => {
   };
 
   return (
-    <div className="border border-black/10 rounded-xl h-[100vh] max-h-[400px] sm:max-h-[493px] relative overflow-hidden mt-4">
+    <div className="border border-black/10 rounded-xl h-[100vh] max-h-[400px] sm:max-h-[493px] 2xl:max-h-[620px] relative overflow-hidden mt-4 sm:mt-0">
       <h2 className="leading-none px-3 sm:px-6 py-3 sm:py-4 border-b border-b-black/10 h-10 sm:h-12 text-sm sm:text-base">
         Live Chat
       </h2>
@@ -134,6 +134,9 @@ const LiveChat = () => {
 };
 
 export default LiveChat;
+
+
+
 
 
 

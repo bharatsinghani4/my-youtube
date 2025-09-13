@@ -584,3 +584,35 @@ export const findNthPrime = (n) => {
   }
   return num - 1;
 };
+
+export const formatNumberWithUnit = (num) => {
+  if (num < 1000) return num.toString();
+  if (num < 1000000) return (num / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+  if (num < 1000000000)
+    return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+  if (num < 1000000000000)
+    return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "B";
+  return (num / 1000000000000).toFixed(1).replace(/\.0$/, "") + "T";
+};
+
+export const formatDateDiffWithUnit = (dateString) => {
+  const now = new Date();
+  const past = new Date(dateString);
+  const diffMs = Math.abs(now - past);
+
+  const minute = 60 * 1000;
+  const hour = 60 * minute;
+  const day = 24 * hour;
+  const week = 7 * day;
+  const month = 30.44 * day; // Average month
+  const year = 365.25 * day; // Leap-year aware
+
+  if (diffMs < minute) return "Just now";
+  if (diffMs < hour) return `${Math.floor(diffMs / minute)} minutes`;
+  if (diffMs < 2 * hour) return "1 hour";
+  if (diffMs < day) return `${Math.floor(diffMs / hour)} hours`;
+  if (diffMs < week) return `${Math.floor(diffMs / day)}d`;
+  if (diffMs < month) return `${Math.floor(diffMs / week)}w`;
+  if (diffMs < year) return `${Math.floor(diffMs / month)}m`;
+  return `${Math.floor(diffMs / year)}y`;
+};

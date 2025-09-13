@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  formatDateDiffWithUnit,
+  formatNumberWithUnit,
+} from "../../utils/helper";
 
 const VideoCard = ({ info }) => {
   const { snippet, statistics } = info;
@@ -27,11 +31,11 @@ const VideoCard = ({ info }) => {
             {title}
           </h2>
           <div className="text-[#606060] text-xs sm:text-sm">
-            <p className="truncate">{channelTitle}</p>
+            <p className="truncate font-bold">{channelTitle}</p>
             <div className="flex flex-wrap items-center gap-1">
-              <span>{viewCount} views</span>
+              <span>{formatNumberWithUnit(viewCount)} views</span>
               <span className="before:content-['•'] before:mx-1 before:my-0">
-                {publishedAt} ago
+                {formatDateDiffWithUnit(publishedAt)} ago
               </span>
             </div>
           </div>
@@ -42,4 +46,9 @@ const VideoCard = ({ info }) => {
 };
 
 export default VideoCard;
+
+
+
+
+
 
